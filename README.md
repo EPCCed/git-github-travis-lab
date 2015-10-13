@@ -129,7 +129,7 @@ For example, a test for `rot13_char(ch)` is:
 
 ```
 def test_rot13_char_a():
-    assert_equal("m", rot13_char_a("a"))
+    assert_equal("m", rot13_char("a"))
 ```
 
 To run your tests, do:
@@ -185,7 +185,9 @@ Now, you will submit your code for inclusion in the original repository, https:/
 * Click New Pull Request
 * Set base fork: epcctraining/git-github-travis-lab
 * Set head fork: USERNAME/git-github-travis-lab
-* TODO
+* Click Create pull request
+* Enter a title for your pull request
+* Click Create pull request
 
 Look at the Travis CI
 ---------------------
