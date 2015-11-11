@@ -225,3 +225,14 @@ We now have the changes in our local repository, and can now push these into our
 ```
 git pull origin master
 ```
+
+Copyright and licence
+---------------------
+
+Copyright (c) 2015 The University of Edinburgh.
+
+Code is licensed under the [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.html) licence. The licence text is also in [LICENSE.md](./LICENSE.md).
+
+Documents are licensed under the Creative Commons [Attribution-NonCommercial 2.5 UK: Scotland (CC BY-NC 2.5 SCOTLAND)](http://creativecommons.org/licenses/by-nc/2.5/scotland/).
+
+This directory includes code based on public domain software. Please see [msc/rot13.py](./msc/rot13.py).
