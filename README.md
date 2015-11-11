@@ -1,6 +1,8 @@
 MSc Programming Skills - Git, GitHub, Travis lab
 ================================================
 
+[![Build Status](https://travis-ci.org/epcctraining/git-github-travis-lab.svg)](https://travis-ci.org/epcctraining/git-github-travis-lab)
+
 A lab session, using Git, GitHub and Travis CI to write and run tests on a shared repository.
 
 In the following text, replace `USERNAME` with your GitHub user name.
