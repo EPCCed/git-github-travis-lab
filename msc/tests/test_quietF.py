@@ -7,3 +7,6 @@ def test_rot13_char_a():
 
 def test_rot13_char_4():
 	assert_equal('4', rot13_char('4'))
+
+def test_rot13_str_hello():
+	assert_equal('uryyb', rot13('hello'))
