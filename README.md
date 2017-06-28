@@ -72,17 +72,19 @@ Depending on the language selected, a language-specific section (e.g. `jdk`, `ph
 
 ```
 before_install:
-  - pip install coverage
+  - pip install pytest-cov
 ```
 
-An optional `before_install` section lists the steps that need to be executed before we can build, run or test our code. For certain languages, we also need to download, build and install additional dependencies. For Python, nosetests is pre-installed by Travis CI, but here the Python coverage package is also installed, using the Python `pip` package installer, so we can generate a code coverage report, a report on the lines of code executed by our tests.
+An optional `before_install` section lists the steps that need to be executed before we can build, run or test our code. For certain languages, we also need to download, build and install additional dependencies. Here, the Python [pytest-cov](https://pypi.python.org/pypi/pytest-cov) package is installed, using the Python `pip` package installer, so we can generate a code coverage report, a report on the lines of code executed by our tests.
 
 ```
 script: 
-  - nosetests -v --with-coverage
+  - py.test -v --cov=msc
 ```
 
-Python needs a `script` entry to specify what to run e.g. how to run our tests and what tests to run. We use nosetests `-v` and `--with-coverage` flags to print out information about the tests being run and a code coverage report.
+Python needs a `script` entry to specify what to run e.g. how to run our tests and what tests to run. We use `py.test`, the test runner from Python's [pytest](https://docs.pytest.org/en/latest/) test framework. The `-v` and `--cov=msc` flags request `py.test` to print out information about the tests being run and a code coverage report for the code in the `msc` module.
+
+Note that we don't need to install `py.test` as it is already provided by Travis CI.
 
 Sign in to Travis CI
 --------------------
@@ -111,11 +113,9 @@ Write a test
 
 In the directory `msc/tests`, create a file called `test_USERNAME.py`.
 
-Add the following imports, to import the functions in `msc/rot13.py` and also `nose.tools` test functions:
+Add the following imports, to import the functions in `msc/rot13.py`:
 
 ```
-from nose.tools import assert_equal
-
 from msc.rot13 import rot13
 from msc.rot13 import rot13_char
 ```
@@ -131,13 +131,13 @@ For example, a test for `rot13_char(ch)` is:
 
 ```
 def test_rot13_char_a():
-    assert_equal("n", rot13_char("a"))
+    assert "n" == rot13_char("a"), "Unexpected character"
 ```
 
 To run your tests, do:
 
 ```
-$ nosetests 
+$ py.test
 ```
 
 When your test passes, add it to Git:
@@ -229,7 +229,7 @@ git pull origin master
 Copyright and licence
 ---------------------
 
-Copyright (c) 2015 The University of Edinburgh.
+Copyright (c) 2015-2017 The University of Edinburgh.
 
 Code is licensed under the [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.html) licence. The licence text is also in [LICENSE.md](./LICENSE.md).
 
