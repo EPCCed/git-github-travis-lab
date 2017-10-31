@@ -1,11 +1,12 @@
 MSc Programming Skills - Git, GitHub, Travis lab
 ================================================
 
-[![Build Status](https://travis-ci.org/epcctraining/git-github-travis-lab.svg)](https://travis-ci.org/epcctraining/git-github-travis-lab)
+A lab session, using Git, GitHub and Travis CI to write and run tests using a shared repository.
 
-A lab session, using Git, GitHub and Travis CI to write and run tests on a shared repository.
+In the following text:
 
-In the following text, replace `USERNAME` with your GitHub user name.
+* Replace `USERNAME` with your GitHub user name.
+* Replace `INSTRUCTOR` with the GitHub user name of your instructor (they'll tell you what this is).
 
 Sign in to GitHub
 -----------------
@@ -17,20 +18,19 @@ If you already have an account, then visit [GitHub](https://github.com) and sign
 Fork this repository on GitHub
 ------------------------------
 
-Visit https://github.com/epcctraining/git-github-travis-lab.
-
-Click Fork.
+On the page for the instructor's repository, https://github.com/INSTRUCTOR/git-github-travis-lab, click Fork.
 
 If asked "Where should we fork this repository?", select your account.
 
 Clone your fork locally
 -----------------------
 
-Within a command-line shell, clone your fork:
+Within a terminal window, clone your fork:
 
 ```
 $ git clone https://github.com/USERNAME/git-github-travis-lab
 $ cd git-github-travis-lab
+$ ls
 ```
 
 Run the ROT-13 code
@@ -38,7 +38,7 @@ Run the ROT-13 code
 
 `msc/rot13.py` holds an implementation of ROT-13, a substitution cipher. The co de originates from [Literate Programs](http://en.literateprograms.org/Rot13_(Python)). For more on ROT-13 substitution cipher, see [Wikipedia](https://en.wikipedia.org/wiki/ROT13).
 
-Run:
+To encrypt a word, run the code as follows:
 
 ```
 $ python msc/rot13.py hello
@@ -98,22 +98,20 @@ Click on Sign in with GitHub.
 Enable your repository on Travis CI
 -----------------------------------
 
-Now, tell Travis CI to check for changes in your repository.
+Now, you need to tell Travis CI to check for changes in your repository, so click on your name on the top-right of the Travis CI page and select **Accounts**.
 
-Click on your name on the top-right of the Travis CI page.
+This will take you to a page, https://travis-ci.org/profile/USERNAME, which shows a list of your GitHub repositories that Travis CI knows about.
 
-This page shows a list of your GitHub repositories that Travis CI knows about.
+If you cannot see `USERNAME/git-gitlab-travis-lab`, then click the **Sync account** button which tells Travis CI to check your current repositories on GitHub.
 
-If you cannot see `USERNAME/git-github-travis-lab`, then click the Sync button.
-
-Once you can see `USERNAME/git-github-travis-lab`, then click on the repository switch (the X button) so that Travis CI knows to check that repository for changes.
+When you can see `USERNAME/git-github-travis-lab`, then click on the button next to it to instruct Travis CI to monitor that repository for changes. The X icon should change to a check/tick icon.
 
 Write a test
 ------------
 
-In the directory `msc/tests`, create a file called `test_USERNAME.py`.
+In the directory `msc/tests`, create a test file called `test_USERNAME.py`.
 
-Add the following imports, to import the functions in `msc/rot13.py`:
+Add the following imports, to import the functions in `msc/rot13.py`, into your test file:
 
 ```
 from msc.rot13 import rot13
@@ -140,7 +138,7 @@ To run your tests, do:
 $ py.test
 ```
 
-When your test passes, add it to Git:
+When your test passes, add and commit it to your Git repository:
 
 ```
 $ git add msc/tests/test_USERNAME.py
@@ -150,7 +148,7 @@ $ git commit -m "USERNAME's first test for ROT13" .
 Push to trigger a new build
 ---------------------------
 
-These changes are to our local repository only. Once we push them to GitHub, they will trigger the running of our Travis CI job. So, let's push these changes to our repository on GitHub, denoted by the 'remote', `origin`, into its default, `master`, branch:
+These changes are to our local repository only. Once we push them to GitHub, they will trigger the running of our Travis CI job. So, let's push these changes to our repository on GitHub, denoted by the `remote`, `origin`, into its default, `master`, branch:
 
 ```
 $ git push origin master
@@ -169,7 +167,7 @@ You should see that your test ran and passed.
 Submit a pull request
 ---------------------
 
-Now, submit your code for inclusion in the original repository, https://github.com/epcctraining/git-github-travis-lab. GitHub calls this a "pull request" - a request that the repository's owner pull in your changes.
+Now, submit your code for inclusion in the instructor's repository, the original repository that you forked. GitHub calls this a "pull request" - a request that the repository's owner pull in your changes.
 
 Visit https://github.com/USERNAME/git-github-travis-lab.
 
@@ -177,9 +175,9 @@ Click Pull Requests
 
 Click New Pull Request
 
-Set base fork: epcctraining/git-github-travis-lab
+Set base fork: `INSTRUCTOR/git-github-travis-lab`
 
-Set head fork: USERNAME/git-github-travis-lab
+Set head fork: `USERNAME/git-github-travis-lab`
 
 Click Create pull request
 
@@ -190,7 +188,9 @@ Click Create pull request
 Look at the Travis CI
 ---------------------
 
-The lab demonstrator will merge in your pull request. Once they have done so, you should see your tests being run as part of https://travis-ci.org/epcctraining/git-github-travis-lab.
+The instructor will merge in your pull request. 
+
+Once they have done so, you should see your tests being run as part of their Travis CI jobs at https://travis-ci.org/INSTRUCTOR/git-github-travis-lab.
 
 Write another test
 ------------------
@@ -203,15 +203,15 @@ Push your changes to GitHub.
 
 Create a pull request.
 
-Get updates from `epcctraining/git-github-travis-lab`
------------------------------------------------------
+Get updates from `INSTRUCTOR/git-github-travis-lab`
+---------------------------------------------------
 
-If you want to update your repository with the changes that have been made to `epcctraining/git-github-travis-lab` since you first forked it, you can pull these into your repository. 
+If you want to update your repository with the changes that have been made to `INSTRUCTOR/git-github-travis-lab` since you first forked it (i.e. tests commited and pushed by other students), you can pull these into your repository.
 
-Add the original repository that you forked as a 'remote'. This is a short-hand to the location of that repository:
+Add the original repository that you forked as a `remote`. This is a short-hand, or nick-name, of the location of that repository:
 
 ```
-$ git remote add upstream https://github.com/epcctraining/git-github-travis-lab
+$ git remote add upstream https://github.com/INSTRUCTOR/git-github-travis-lab
 ```
 
 Pull in the current version of the `master` branch of the repository represented by the `upstream` remote:
