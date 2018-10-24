@@ -98,9 +98,9 @@ Click on Sign in with GitHub.
 Enable your repository on Travis CI
 -----------------------------------
 
-Now, you need to tell Travis CI to check for changes in your repository, so click on your name on the top-right of the Travis CI page and select **Accounts**.
+Now, you need to tell Travis CI to check for changes in your repository, so click on your name on the top-right of the Travis CI page and select **Settings**.
 
-This will take you to a page, https://travis-ci.org/profile/USERNAME, which shows a list of your GitHub repositories that Travis CI knows about.
+This will take you to a page, https://travis-ci.org/account/repositories, which shows a list of your GitHub repositories that Travis CI knows about.
 
 If you cannot see `USERNAME/git-gitlab-travis-lab`, then click the **Sync account** button which tells Travis CI to check your current repositories on GitHub.
 
@@ -156,7 +156,7 @@ $ git push origin master
 
 Visit https://travis-ci.org/USERNAME/git-github-travis-lab.
 
-You should see a single job with two sub-jobs, one for each version of these languages we are testing under.
+You should shortly see a single job with two sub-jobs, one for each version of these languages we are testing under.
 
 Jobs should be coloured green with a tick, indicating that they passed.
 
