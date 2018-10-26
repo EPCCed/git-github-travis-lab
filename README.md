@@ -36,7 +36,7 @@ $ ls
 Run the ROT-13 code
 -------------------
 
-`msc/rot13.py` holds an implementation of ROT-13, a substitution cipher. The co de originates from [Literate Programs](http://en.literateprograms.org/Rot13_(Python)). For more on ROT-13 substitution cipher, see [Wikipedia](https://en.wikipedia.org/wiki/ROT13).
+`msc/rot13.py` holds an implementation of ROT-13, a substitution cipher. The code originates from [Literate Programs](http://en.literateprograms.org/Rot13_(Python)). For more on ROT-13 substitution cipher, see [Wikipedia](https://en.wikipedia.org/wiki/ROT13).
 
 To encrypt a word, run the code as follows:
 
